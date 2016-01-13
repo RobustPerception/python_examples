@@ -1,2 +1,3 @@
-# python_examples
-Python examples for Prometheus
+# Python examples for Prometheus
+
+These are examples used in [blog posts](http://www.robustperception.io/blog/).
