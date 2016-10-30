@@ -20,7 +20,7 @@ for result in results:
       labelnames.update(result['metric'].keys())
 
 # Canonicalize
-labelnames.remove('__name__')
+labelnames.discard('__name__')
 labelnames = sorted(labelnames)
 
 writer = csv.writer(sys.stdout)
