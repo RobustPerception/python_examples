@@ -50,7 +50,10 @@ class JenkinsCollector(object):
       name = job['name']
       for s in statuses:
         # If there's a null result, we want to export zeros.
-        status = job[s] or {}
+        if s in job and job[s]:
+            status=job[s]
+        else:
+            status={}
         metrics[s]['number'].add_metric([name], status.get('number', 0))
         metrics[s]['duration'].add_metric([name], status.get('duration', 0) / 1000.0)
         metrics[s]['timestamp'].add_metric([name], status.get('timestamp', 0) / 1000.0)
