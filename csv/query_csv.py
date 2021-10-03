@@ -27,7 +27,7 @@ writer = csv.writer(sys.stdout)
 # Write the header,
 writer.writerow(['name', 'timestamp', 'value'] + labelnames)
 
-# Write the sanples.
+# Write the samples.
 for result in results:
     l = [result['metric'].get('__name__', '')] + result['value']
     for label in labelnames:
